@@ -25,7 +25,7 @@ export const availableLangs = ['en', 'ge' ];
 // list display fields
 // only String or multilingualSchema
 export const listFields = {
-  name: 'String',
+  title: 'multilingualSchema',
   // title: 'multilingualSchema', 
 };
 
@@ -49,23 +49,5 @@ export const selectFields = {
 }
 
 export const fields = {
-  testString: 'String',
-  testNumber: 'Number',
-  testDate: 'Date',
-  testMultilingual: 'multilingualSchema',
-  testImage: 'imageSchema',
-  testImages: '[imageSchema]',
-  testSocials: 'Socials',
-  testMultilingualTextarea: 'multilingualSchema-Textarea',
-  testMultilingualEditor: 'multilingualSchema-quill-editor',
-  testEditor: 'quill-editor',
-  testTextarea: 'Textarea',
-  testSlideToggle: 'Slide-toggle',
-  meta: 'Meta',
-  testReference: 'Reference',
-  testSelect: 'Select',
-  about: {
-    phone: 'String',
-    address: 'multilingualSchema',
-  }
+  title: 'multilingualSchema',
 }

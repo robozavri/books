@@ -8,7 +8,7 @@ export default {
   },
 
   mongo: {
-    uri: `mongodb://localhost:27017/core`,
+    uri: `mongodb://localhost:27017/books`,
     options: {
       useNewUrlParser: true,
       useCreateIndex: true,
