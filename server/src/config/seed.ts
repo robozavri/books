@@ -7,11 +7,13 @@ import * as UserDao from '../api/users/user.dao';
 import * as MetaDao from '../api/metas/meta.dao';
 import * as EventDao from '../api/events/event.dao';
 import * as CategoriesDao from '../api/categories/categories.dao';
+import * as BooksDao from '../api/books/books.dao';
 
 import * as UserStub from '../stubs/user.stub';
 import * as MetaStub from '../stubs/meta.stub';
 import * as EventStub from '../stubs/event.stub';
 import * as CategoriesStub from '../stubs/categories.stub';
+import * as BooksStub from '../stubs/books.stub';
 
 
 export async function seedDB() {
@@ -32,6 +34,7 @@ export async function seedDBDevelopment() {
   await MetaDao.create(MetaStub.getSingle());
   await EventDao.insertMany(EventStub.getMany(11));
   await CategoriesDao.insertMany(CategoriesStub.getMany(11));
+  await BooksDao.insertMany(BooksStub.getMany(11));
 
 
   logger.info('Seed DB development completed');
@@ -42,6 +45,7 @@ export async function seedDBProduction() {
   await MetaDao.create(MetaStub.getSingle());
   await EventDao.insertMany(EventStub.getMany(11));
   await CategoriesDao.insertMany(CategoriesStub.getMany(11));
+  await BooksDao.insertMany(BooksStub.getMany(11));
 
   logger.info('Seed DB production completed');
 }
@@ -51,6 +55,7 @@ export async function clearDBDevelopment() {
   await MetaDao.destroyAll();
   await EventDao.destroyAll();
   await CategoriesDao.destroyAll();
+  await BooksDao.destroyAll();
 }
 
 export async function clearDBProduction() {
@@ -58,6 +63,7 @@ export async function clearDBProduction() {
   await MetaDao.destroyAll();
   await EventDao.destroyAll();
   await CategoriesDao.destroyAll();
+  await BooksDao.destroyAll();
 }
 
 function getAdmin() {
