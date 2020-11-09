@@ -19,6 +19,10 @@ const routes: Routes = [
         path: 'meta',
         loadChildren: './routes/meta/meta.module#MetaModule'
       },
+      {
+        path: 'categories',
+        loadChildren: './routes/categories/categories.module#CategoriesModule'
+      },
     ]
   }
 ];

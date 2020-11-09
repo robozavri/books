@@ -1,0 +1,22 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="tab-content pt-24 pb-24" fusePerfectScrollbar fxLayout="column">
+    
+    <div fxLayout="row" fxLayoutAlign="space-between" formGroupName='title'>
+      
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="50">
+          <mat-label> title en </mat-label>
+          <input matInput placeholder="title en" formControlName="en">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="50">
+          <mat-label> title ge </mat-label>
+          <input matInput placeholder="title ge" formControlName="ge">
+      </mat-form-field>
+
+    </div>
+
+    <div>
+      <button mat-raised-button color="primary" *ngIf="showSubmit"> Submit </button>
+    </div>
+  </div>
+</form>
