@@ -50,4 +50,9 @@ export const selectFields = {
 
 export const fields = {
   title: 'multilingualSchema',
+  author: 'multilingualSchema',
+  image: 'imageSchema',
+  amazonPrice: 'Number',
+  amazonLink: 'String',
+  price: 'Number',
 }

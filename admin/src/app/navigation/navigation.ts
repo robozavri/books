@@ -15,6 +15,13 @@ export const navigation: FuseNavigation[] = [
         url: '/admin/categories',
       },
       {
+        id: 'books',
+        title: 'Books',
+        type: 'item',
+        icon: 'all_out',
+        url: '/admin/books',
+      },
+      {
         id: 'meta',
         title: 'Meta',
         translate: 'NAV.META',

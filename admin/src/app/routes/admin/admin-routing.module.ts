@@ -23,6 +23,14 @@ const routes: Routes = [
         path: 'categories',
         loadChildren: './routes/categories/categories.module#CategoriesModule'
       },
+      {
+        path: 'book/:id',
+        loadChildren: './routes/book/book.module#BookModule'
+      },
+      {
+        path: 'books',
+        loadChildren: './routes/books/books.module#BooksModule'
+      },
     ]
   }
 ];

@@ -1,0 +1,63 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="tab-content p-24" fusePerfectScrollbar fxLayout="column">
+    
+    <div fxLayout="row" fxLayoutAlign="space-between" formGroupName='title'>
+      
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="50">
+          <mat-label> title en </mat-label>
+          <input matInput placeholder="title en" formControlName="en">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="50">
+          <mat-label> title ge </mat-label>
+          <input matInput placeholder="title ge" formControlName="ge">
+      </mat-form-field>
+
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="space-between" formGroupName='author'>
+      
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="50">
+          <mat-label> author en </mat-label>
+          <input matInput placeholder="author en" formControlName="en">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="50">
+          <mat-label> author ge </mat-label>
+          <input matInput placeholder="author ge" formControlName="ge">
+      </mat-form-field>
+
+    </div>
+
+    <h3> image </h3>
+    <div class="inputs_container">
+      <app-image-upload
+        [image]="formData.image"
+        [imageHeight]="imageSize.height"
+        [imageWidth]="imageSize.width"
+        (uploadComplete)="onUploadCompleteImage6($event)">
+      </app-image-upload>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="100">
+        <mat-label> amazon price </mat-label>
+        <input matInput type="number" min="0" placeholder="amazon price" formControlName="amazonPrice">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="100">
+        <mat-label> amazon link </mat-label>
+        <input matInput placeholder="amazon link" formControlName="amazonLink">
+      </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex="100">
+        <mat-label> price </mat-label>
+        <input matInput type="number" min="0" placeholder="price" formControlName="price">
+      </mat-form-field>
+    </div>
+
+  </div>
+</form>
