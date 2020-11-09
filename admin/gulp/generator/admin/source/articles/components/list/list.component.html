@@ -1,0 +1,35 @@
+<div class="content-card" *ngIf="dataSource && dataSource.length">
+  <mat-table class="products-table articles_table" #table [dataSource]="dataSource" multiTemplateDataRows
+    fusePerfectScrollbar cdkDropList (cdkDropListDropped)="drop($event)">
+
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> N </mat-header-cell>
+      <mat-cell *matCellDef="let item; let i = dataIndex;"> {{ i + 1 }} </mat-cell>
+    </ng-container>
+    <%=listHtmlColumnsArea%>
+    <!-- active column -->
+    <ng-container matColumnDef="active">
+      <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-xs> Actions </mat-header-cell>
+      <mat-cell *matCellDef="let item" fxHide fxShow.gt-xs>
+        <span class="cal-event-actions ng-star-inserted">
+          <a class="cal-event-action ng-star-inserted" [routerLink]="['/admin/<%=singularFileName%>', item._id]">
+            <i class="material-icons s-16"> edit </i>
+          </a>
+          <a class="cal-event-action ng-star-inserted" (click)="confirmDelete($event, item)">
+            <i class="material-icons s-16"> delete </i>
+          </a>
+        </span>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></mat-header-row>
+
+    <mat-row *matRowDef="let item; columns: displayedColumns;" class="product" matRipple
+      [routerLink]="['/admin/<%=singularFileName%>', item._id]" cdkDrag>
+    </mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="query.limit" [length]="pageLength"
+    (page)="pageEvent = pagenatorEvent($event)">
+  </mat-paginator>
+</div>
