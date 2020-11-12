@@ -8,12 +8,15 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ComponentsModule } from './components/components.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
+    ComponentsModule,
     BrowserModule,
     AppRoutingModule,
     SharedModule.forRoot(),

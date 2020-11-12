@@ -6,6 +6,8 @@ import { ResourceUrlPipe } from './pipes/resource-url.pipe';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LangService } from './services/lang.service';
 import { CookieService } from 'ngx-cookie-service';
+import { BooksApiService } from './http/books-api.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [ResourceUrlPipe],
@@ -29,9 +31,11 @@ export class SharedModule {
     return {
       ngModule: SharedModule,
       providers: [
+        AuthService,
         LangService,
         TranslateService,
         CookieService,
+        BooksApiService
       ]
     };
   }

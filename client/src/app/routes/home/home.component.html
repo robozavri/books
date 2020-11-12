@@ -1,0 +1,6 @@
+
+<li *ngFor="let bookItem of books">
+    <img [src]="bookItem.image.url | resourceUrl" alt="" width="150">
+
+    {{'T' | translate : bookItem.title }} 
+</li>
