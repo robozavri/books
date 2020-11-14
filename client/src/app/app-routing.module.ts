@@ -13,6 +13,10 @@ const routes: Routes = [{
       path: 'order',
       loadChildren: () => import('./routes/order/order.module').then(m => m.OrderModule)
     },
+    {
+      path: '**',
+      redirectTo: 'home',
+    },
   ]
 }]
 
