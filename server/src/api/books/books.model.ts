@@ -10,7 +10,7 @@ const BooksSchema = new Schema({
   amazonPrice: Number,
   amazonLink: String,
   price: Number,
-  
+  category: { type: Schema.Types.ObjectId, ref: 'Categories' },
   position: Number,
 });
 

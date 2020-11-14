@@ -33,7 +33,6 @@ function parseSearch({ keyword }: { keyword?: string }) {
       { 'author.en': { $regex: keyword, $options: 'i' } },
       { 'author.ge': { $regex: keyword, $options: 'i' } },
       { 'amazonLink': { $regex: keyword, $options: 'i' } },
-      
     ],
   } : {};
 }
@@ -62,10 +61,10 @@ function parseBaseProps(body: any) {
   return _.pick(body, [
     'title',
     'author',
+    'category',
     'image',
     'amazonPrice',
     'amazonLink',
     'price',
-    
   ]);
 }
