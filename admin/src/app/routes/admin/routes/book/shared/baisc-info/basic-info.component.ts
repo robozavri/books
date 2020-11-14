@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@ang
 import { FormComponent as _FormComponent } from '../../../../../../shared/components/form.component';
 import { Book } from 'app/shared/models/book';
 import { largeSize } from 'app/shared/constants/image';
+import { CategoryApiService } from 'app/shared/http/category-api.service';
 
 
 @Component({
@@ -18,15 +19,20 @@ export class BasicInfoComponent extends _FormComponent implements OnInit {
  
   form: FormGroup;
   imageSize = largeSize;
+  categories: any;
   
   constructor(
+    private categoryApiService: CategoryApiService,
     private fb: FormBuilder,
-    
   ) {
     super();
   }
 
   ngOnInit(): void {
+
+    this.categoryApiService.getByQuery({ all: true}).subscribe((data: any) => {
+       this.categories = data.items;
+    });
     
     this.formData.title = this.formData.title || {};
     this.formData.author = this.formData.author || {};
@@ -34,21 +40,21 @@ export class BasicInfoComponent extends _FormComponent implements OnInit {
     this.formData.amazonPrice = this.formData.amazonPrice || '';
     this.formData.amazonLink = this.formData.amazonLink || '';
     this.formData.price = this.formData.price || '';
+    this.formData.category = this.formData.category || '';
 
     this.form = this.fb.group({
     title: this.fb.group({
-        
       en: [this.formData.title.en || ''],
       ge: [this.formData.title.ge || ''],
     }),
     author: this.fb.group({
-        
       en: [this.formData.author.en || ''],
       ge: [this.formData.author.ge || ''],
     }), 
     image: this.fb.group({
       url: [this.formData.image.url || '']
     }),
+    category: [this.formData.category || ''],
     amazonPrice: [this.formData.amazonPrice || ''],
     amazonLink: [this.formData.amazonLink || ''],
     price: [this.formData.price || ''],

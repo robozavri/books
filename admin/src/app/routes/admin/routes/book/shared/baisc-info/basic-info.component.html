@@ -1,5 +1,12 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
   <div class="tab-content p-24" fusePerfectScrollbar fxLayout="column">
+
+    <mat-form-field  [style.width.px]=700>
+        <mat-label>Category *</mat-label>
+        <mat-select formControlName="category">
+            <mat-option *ngFor="let category of categories" [value]="category._id">{{ category.title.en }}</mat-option>
+        </mat-select>
+    </mat-form-field>
     
     <div fxLayout="row" fxLayoutAlign="space-between" formGroupName='title'>
       
