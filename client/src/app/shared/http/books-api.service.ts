@@ -17,6 +17,12 @@ export class BooksApiService {
     });
   }
 
+  getByGroupedCategories(params): Observable<QueryResponse<Book>> {
+    return this.http.get<any>(`${API_URL}/api/books/grouped`, {
+      params,
+    });
+  }
+
   create(data): Observable<any> {
     return this.http.post(`${API_URL}/api/books`, data, {
       responseType: 'text',

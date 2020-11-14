@@ -1,6 +1,16 @@
+<div *ngIf="data">
+    <div *ngFor="let item of data">
+        <p>{{ 'T' | translate : item?.category[0].title }}</p>
+        <carousel>
+            <div class="carousel-cell" *ngFor="let book of item.books" >
+                <img [src]="book?.image?.url | resourceUrl"  width=50  height=100 >
+            </div>
+        </carousel>
+    </div>
+</div>
 
-<li *ngFor="let bookItem of books">
-    <img [src]="bookItem.image.url | resourceUrl" alt="" width="150">
-
-    {{'T' | translate : bookItem.title }} 
-</li>
+<!-- <carousel *ngIf="books">
+    <div class="carousel-cell"*ngFor="let bookItem of books" >
+        <img [src]="bookItem?.image?.url | resourceUrl"  width=50  height=100 >
+    </div>
+</carousel> -->
