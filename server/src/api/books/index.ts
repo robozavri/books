@@ -7,6 +7,7 @@ import * as auth from '../../auth';
 const booksRouter = Router();
 
 booksRouter.get('/', booksParser.parseGetByQuery, getByQuery);
+booksRouter.get('/grouped', booksParser.parseGetByQuery, getByGrouped);
 booksRouter.post('/', auth.isAdmin, booksParser.parseCreate, create);
 booksRouter.put('/:id', auth.isAdmin, booksParser.parseUpdate, update);
 booksRouter.delete('/:id', auth.isAdmin, destroy);
@@ -20,6 +21,16 @@ async function getByQuery(req: Request, res: Response, next: NextFunction) {
   try {
     const query = req.query;
     const booksData = await booksDao.getByQuery(query);
+    res.json(booksData);
+  } catch (e) {
+    next(e);
+  }
+}
+
+async function getByGrouped(req: Request, res: Response, next: NextFunction) {
+  try {
+    const query = req.query;
+    const booksData = await booksDao.getGroupedByCategory(query);
     res.json(booksData);
   } catch (e) {
     next(e);
