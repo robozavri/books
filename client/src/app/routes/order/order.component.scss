@@ -1,0 +1,49 @@
+.myForm .form-control  {
+    // background-color: #3c3c3c;
+    border-bottom: 1px solid #4f4f50;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.leftDiv {
+//    background-color: darkgray;
+   background-color:rgba(0, 0, 0, 0.5);
+   width: 400px;
+   padding: 30px;
+   margin: 30px;
+//    opacity: 0.2;
+   color: #d6d6d6;
+}
+
+.formDiv {
+    color: #d6d6d6;
+    border-radius: 15px;
+    // background-color: #000000;
+    background-color: #404040;
+    // background: transparent;
+    // background: rgba(0,0,0,0.5);
+    padding: 30px;
+    margin: 30px;
+    opacity: 1.2;
+    // filter: blur(8px);
+    // backdrop-filter: blur(30px);
+    // backdrop-filter: blur(8px);
+}
+
+.formTitle {
+    font-size: 26px;
+    padding: 10px;
+    text-align: center;
+    color: #d6d6d6;
+}
+
+.sendBtn {
+    background-color: #000000;
+    color: darkgray;
+    display: inline-block;
+    width: 100%;
+    border-radius: 30px;
+}
+

@@ -12,14 +12,14 @@ export class LangService {
   constructor(private cookieService: CookieService, private translateService: TranslateService) { }
 
   init() {
-    const lang = this.getCurrent() || langs.EN;
+    const lang = this.getCurrent() || langs.GE;
     this.translateService.setTranslation(langs.EN, en);
     this.translateService.setTranslation(langs.GE, ge);
     this.translateService.use(lang);
   }
 
   getCurrent() {
-    return this.cookieService.get(LOCAL_LANG_KEY) || 'en';
+    return this.cookieService.get(LOCAL_LANG_KEY) || 'ge';
   }
 
   use(lang) {

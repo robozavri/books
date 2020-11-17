@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { BooksApiService } from 'src/app/shared/http/books-api.service';
 import { Book } from '../../shared/models/book';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,9 +10,10 @@ import { Book } from '../../shared/models/book';
 export class HomeComponent implements OnInit {
 
   data: Book[];
+  dialogRef: any;
 
   constructor(
-    private booksApiService: BooksApiService
+    private booksApiService: BooksApiService,
   ) { }
 
   ngOnInit(): void {

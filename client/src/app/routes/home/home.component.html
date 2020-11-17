@@ -1,13 +1,27 @@
-<div *ngIf="data">
-    <div *ngFor="let item of data">
-        <p>{{ 'T' | translate : item?.category[0].title }}</p>
-        <carousel>
-            <div class="carousel-cell" *ngFor="let book of item.books" >
-                <img [src]="book?.image?.url | resourceUrl"  width=50  height=100 >
+
+<!-- <button (click)="open()">open</button> -->
+
+<div class="container-fluid">
+    <div *ngIf="data" style="padding: 20px;">
+        <div *ngFor="let item of data">
+            <div class="row" style="margin-top: 30px;">
+                <p style="margin-left: 30px; font-size: 20px;">{{ 'T' | translate : item?.category[0].title }}</p>
+                <carousel style="height: 300px;">
+                    <div class="carousel-cell image" *ngFor="let book of item.books"  [ngStyle]="{'background-image': 'url(' + (book?.image?.url | resourceUrl) + ')'}">
+                        <!-- <div  [ngStyle]="{'background-image': 'url(' + (book?.image?.url | resourceUrl) + ')'}"></div> -->
+                        <!-- <img [src]="book?.image?.url | resourceUrl"  > -->
+                        <!-- <div  style="border-radius: 10px !important;">
+                            <img [src]="book?.image?.url | resourceUrl" class="img"  >
+                        </div> -->
+                       
+                    </div>
+                </carousel>
             </div>
-        </carousel>
+        </div>
     </div>
-</div>
+  </div>
+
+
 
 <!-- <carousel *ngIf="books">
     <div class="carousel-cell"*ngFor="let bookItem of books" >

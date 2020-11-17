@@ -1,1 +1,45 @@
-<p>order works!</p>
+<div class="container-fluid">
+    <div class="row justify-content-between">
+        <div class="col-md-5">
+            <div class="leftDiv">
+                <h1>{{ 'ATTENTION' | translate }}</h1>
+                <p>{{ 'ORDER_TEXT_0' | translate }}</p>
+                <p>{{ 'ORDER_TEXT_1' | translate }}</p>
+                <p>{{ 'ORDER_TEXT_2' | translate }}</p>
+                <p>{{ 'DELIVERY_TEXT' | translate }}</p>
+            </div>
+          
+        </div>
+        <div class="col-sm-8 col-md-5 col-lg-4 col-xl-3">
+            <div class="formDiv">
+                <h2 class="formTitle">წიგნის შეკვეთა</h2>
+                <form class="myForm">
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="წიგნის დასახელება">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="ელ.ფოსტა">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="მისამართი">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="სრული სახელი">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="ტელეფონი">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="დამატებითი ინფორმაცია">
+                    </div>
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn sendBtn">შეკვეთა</button>
+                    </div>
+                 
+                </form>
+            </div>
+         
+        </div>
+    </div>
+</div>
+

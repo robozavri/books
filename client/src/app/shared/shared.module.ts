@@ -8,6 +8,7 @@ import { LangService } from './services/lang.service';
 import { CookieService } from 'ngx-cookie-service';
 import { BooksApiService } from './http/books-api.service';
 import { AuthService } from './services/auth.service';
+import { CartService } from './services/cart.service';
 
 @NgModule({
   declarations: [ResourceUrlPipe],
@@ -35,7 +36,8 @@ export class SharedModule {
         LangService,
         TranslateService,
         CookieService,
-        BooksApiService
+        BooksApiService,
+        CartService
       ]
     };
   }
